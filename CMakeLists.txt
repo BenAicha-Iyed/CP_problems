@@ -7,4 +7,6 @@ include_directories(.)
 
 add_executable(coding_betounsi
         main.cpp
+        "contests/codeforces round 1103 div3/problem_b.cpp"
+        "contests/codeforces round 1103 div3/problem_b.h"
 )

@@ -78,9 +78,9 @@ void test_case() {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    freopen("errors.txt", "w", stderr);
     int t=1;
     cin>>t;
     while (t--) {
