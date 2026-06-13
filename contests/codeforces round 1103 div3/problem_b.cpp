@@ -30,7 +30,7 @@ void test_case() {
     cout << min_operations(a, b, x) << endl;
 }
 
-int main() {
+int main_function() { // Before running, you must convert this function name from "main_function()" to "main()"
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     freopen("input.txt", "r", stdin);

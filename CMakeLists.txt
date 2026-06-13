@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 3.28)
 project(coding_betounsi)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -10,3 +10,5 @@ add_executable(coding_betounsi
         "contests/codeforces round 1103 div3/problem_b.cpp"
         "contests/codeforces round 1103 div3/problem_b.h"
 )
+
+target_include_directories(coding_betounsi PUBLIC contests)
