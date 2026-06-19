@@ -1,10 +1,13 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 6/14/26.
+// Problem link: https://codeforces.com/contest/475/problem/B
 //
 
+#ifndef CODING_BETOUNSI_STRONGLYCONNECTEDCITY_H
+#define CODING_BETOUNSI_STRONGLYCONNECTEDCITY_H
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+
 
 class StronglyConnectedCity {
 private:
@@ -65,18 +68,5 @@ public:
     }
 };
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
-    StronglyConnectedCity s;
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        s.solve();
-    }
-    return 0;
-}
+
+#endif //CODING_BETOUNSI_STRONGLYCONNECTEDCITY_H
