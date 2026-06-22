@@ -6,7 +6,7 @@
 using namespace std;
 using ll = long long;
 
-class StronglyConnectedCity {
+class Solution {
 private:
     int n = 0, m = 0;
     vector <vector<bool>> visited;
@@ -69,10 +69,10 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
-    StronglyConnectedCity s;
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    freopen("errors.txt", "w", stderr);
+    Solution s;
     int t=1;
     // cin>>t;
     while (t--) {
