@@ -13,6 +13,7 @@ add_executable(coding_betounsi
         "contests/Codeforces Round 222 (div 1)/Maze.h"
         "contests/Bayan 2015 Contest Warm Up/StronglyConnectedCity.h"
         "Leetcode daily challenges/1833. Maximum Ice Cream Bars.h"
+        "Leetcode daily challenges/1189. Maximum Number of Balloons .h"
 )
 
 target_include_directories(coding_betounsi PUBLIC contests)

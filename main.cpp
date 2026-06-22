@@ -8,60 +8,26 @@ using ll = long long;
 
 class Solution {
 private:
-    int n = 0, m = 0;
-    vector <vector<bool>> visited;
-    int dx[4] = {1, 0, -1, 0};
-    int dy[4] = {0, 1, 0, -1};
-    string rows, cols;
-
-    vector<int> neighbours(int i, int j) {
-        vector<int> res;
-        if (cols[j] == 'v') res.push_back(0);
-        else res.push_back(2);
-        if (rows[i] == '>') res.push_back(1);
-        else res.push_back(3);
-        return res;
-    }
-
-    bool inside_maze(int &x, int &y, int pos) const {
-        x += dx[pos];
-        y += dy[pos];
-        return x >= 0 && x < n && y >= 0 && y < m ;
-    }
-
-    void dfs(int i=0, int j=0) {
-        visited[i][j] = true;
-        int x, y;
-        for (int p : neighbours(i, j)) {
-            x=i, y=j;
-            if (inside_maze(x, y, p) && !visited[x][y]) dfs(x, y);
-        }
-    }
-
-    bool check_connectivity() {
-        for (int i=0; i<n; i++) {
-            for (int j=0; j<m; j++) {
-                if (!visited[i][j]) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+    string text;
 public:
     void solve() {
-        cin >> n >> m >> rows >> cols;
-        for (int i=0; i<n; i++) {
-            for (int j=0; j<m; j++) {
-                visited.assign(n, vector<bool>(m, false));
-                dfs(i, j);
-                if (!check_connectivity()) {
-                    cout<<"NO"<<endl;
-                    return;
-                }
-            }
+        cin>>text;
+        unordered_map<char, int> min_occ = {
+            {'a', 1},
+            {'b', 1},
+            {'n', 1},
+            {'l', 2},
+            {'o', 2}
+        };
+        map<char, int> total_occ;
+        for (char c : text) {
+            if (min_occ.find(c) != min_occ.end()) total_occ[c]++;
         }
-        cout<<"YES"<<endl;
+        int ans = text.size();
+        for (auto it: min_occ) {
+            ans = min(ans, total_occ[it.first]/it.second);
+        }
+        cout<<ans<<endl;
     }
 };
 
@@ -74,7 +40,7 @@ int main() {
     freopen("errors.txt", "w", stderr);
     Solution s;
     int t=1;
-    // cin>>t;
+    cin>>t;
     while (t--) {
         s.solve();
     }
