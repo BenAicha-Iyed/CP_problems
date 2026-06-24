@@ -1,7 +1,12 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 6/24/26.
+// Problem Link: https://codeforces.com/problemset/problem/522/A
 //
 
+#ifndef CODING_BETOUNSI_REPOSTS_H
+#define CODING_BETOUNSI_REPOSTS_H
+
+#endif //CODING_BETOUNSI_REPOSTS_H
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -54,19 +59,3 @@ public:
         cout << dfs(reference) << endl;
     }
 };
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
-    Solution s;
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        s.solve();
-    }
-    return 0;
-}
