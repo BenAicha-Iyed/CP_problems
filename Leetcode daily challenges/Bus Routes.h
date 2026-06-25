@@ -1,6 +1,13 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 6/25/26.
+// Problem link: https://leetcode.com/problems/bus-routes/description/?envType=company&envId=uber&favoriteSlug=uber-thirty-days
 //
+
+#ifndef CODING_BETOUNSI_BUS_ROUTES_H
+#define CODING_BETOUNSI_BUS_ROUTES_H
+
+#endif //CODING_BETOUNSI_BUS_ROUTES_H
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -61,22 +68,7 @@ public:
                 cin>>routes[i][j];
             }
         }
-        cout<<"ans = "<<numBusesToDestination(routes,  source,  target)<<endl;
+        cout<<numBusesToDestination(routes,  source,  target)<<endl;
     }
 };
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    freopen("errors.txt", "w", stderr);
-    Solution s;
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        s.solve();
-    }
-    return 0;
-}

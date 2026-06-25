@@ -17,6 +17,7 @@ add_executable(coding_betounsi
         "contests/Codeforces Round 321 (Div 2)/Kefa and Park.h"
         "contests/Codeforces Round 360 (Div 1)/NP-Hard Problem.h"
         "contests/VK Cup 2015 - Qualification Round 1/Reposts.h"
+        "Leetcode daily challenges/Bus Routes.h"
 )
 
 target_include_directories(coding_betounsi PUBLIC contests)
