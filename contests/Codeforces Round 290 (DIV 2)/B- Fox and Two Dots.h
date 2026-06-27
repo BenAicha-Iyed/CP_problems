@@ -1,8 +1,11 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 6/27/26.
 //
 
-#include <bits/stdc++.h>
+#ifndef CODING_BETOUNSI_B_FOX_AND_TWO_DOTS_H
+#define CODING_BETOUNSI_B_FOX_AND_TWO_DOTS_H
+
+#endif //CODING_BETOUNSI_B_FOX_AND_TWO_DOTS_H
 using namespace std;
 using ll = long long;
 const int N = 53;
@@ -53,19 +56,3 @@ public:
         cout<<"No"<<endl;
     }
 };
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
-    Solution s;
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        s.solve();
-    }
-    return 0;
-}
