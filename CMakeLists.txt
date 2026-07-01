@@ -19,6 +19,7 @@ add_executable(coding_betounsi
         "contests/VK Cup 2015 - Qualification Round 1/Reposts.h"
         "Leetcode daily challenges/Bus Routes.h"
         "contests/Codeforces Round 290 (DIV 2)/B- Fox and Two Dots.h"
+        "Leetcode daily challenges/2812 Find the safetest path in a grid.h"
 )
 
 target_include_directories(coding_betounsi PUBLIC contests)
