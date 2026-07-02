@@ -1,6 +1,13 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 7/2/26.
+// Problem link: https://leetcode.com/problems/shortest-path-visiting-all-nodes/description/
 //
+
+#ifndef CODING_BETOUNSI_SHORTEST_PATH_VISITING_ALL_NODES_H
+#define CODING_BETOUNSI_SHORTEST_PATH_VISITING_ALL_NODES_H
+
+#endif //CODING_BETOUNSI_SHORTEST_PATH_VISITING_ALL_NODES_H
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -88,20 +95,3 @@ public:
         cout << shortestPathLength(graph)<<endl;
     }
 };
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    freopen("errors.txt", "w", stderr);
-
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        Solution s;
-        s.solve();
-    }
-    return 0;
-}
