@@ -6,62 +6,84 @@
 using namespace std;
 using ll = long long;
 const int N = 52;
+const int INF = 1e9;
+
+struct Edge {
+    int u, v;
+    ll cost;
+    Edge(): u(0), v(1), cost(INF) {}
+    Edge(int u, int v, ll cost) : u(u), v(v), cost(cost) {}
+};
+
 typedef vector<int> vi;
+typedef vector<bool> vb;
 typedef vector<vi> vvi;
+typedef vector<Edge> ve;
+typedef vector<ve> vve;
+typedef vector<ll> vl;
 
 class Solution {
-    int n, m;
-    int dx[4] = {1, 0, -1, 0};
-    int dy[4] = {0, 1, 0, -1};
-    const int INF = 1e9;
-    vvi dp;
+private:
+    int n;
+    vve graph;
+    vb visited;
+    bool connected = false;
 
-    bool check_inside(int &u, int &v, int p){
-        u += dx[p];
-        v += dy[p];
-        return ( 0<=u && u<n && 0<=v && v<m );
-    }
-
-    int min_consumption(vvi grid){
-        dp[n-1][m-1] = grid[n-1][m-1];
-        queue<vi> q;
-        q.push({n-1, m-1});
-        while(!q.empty()) {
-            vi u = q.front();
-            int i= u[0], j= u[1];
-            q.pop();
-            for (int k=0; k<4; k++) {
-                int x=i, y=j;
-                if (check_inside(x,y,k) && dp[x][y] > dp[i][j] + grid[x][y]) {
-                    q.push({x, y});
-                    dp[x][y] = dp[i][j] + grid[x][y];
+    vl cost_and_score(int u, ll k) {
+        if (u == n-1) {
+            connected = true;
+            return {0, INF, 0};
+        }
+        visited[u] = true;
+        ll total_cost = INF, min_cost = INF, max_score = 0;
+        for (Edge e : graph[u]) {
+            if (!visited[e.v]) {
+                vl temp = cost_and_score(e.v, k);
+                if (temp[0] + e.cost<=k ) {
+                    total_cost = temp[0] + e.cost;
+                    min_cost = min(temp[1], e.cost);
+                    max_score = max(max_score, min_cost);
                 }
             }
         }
-        int ans = dp[0][0];
-        dp.clear();
-        return ans;
+        return {total_cost, min_cost, max_score};
     }
-
 
 public:
-    bool findSafeWalk(vector<vector<int>>& grid, int health) {
-        n = grid.size();
-        m = grid[0].size();
-        dp.assign(n, vi(m, INF));
-        return health > min_consumption( grid);
-    }
-    void solve() {
-        int r, c, h;
-        cin>>r>>c>>h;
-        vvi grid;
-        grid.assign(r, vi(c));
-        for (int i=0; i<r; i++) {
-            for (int j=0; j<c; j++) {
-                cin>>grid[i][j];
+    int findMaxPathScore(vvi& edges, vb& online, ll k) {
+        // if node x is offline don't add it to the adj list
+        // if an edge with a cost > k don't consider it in the graph
+        // in the same function, return the recovery cost and the score of the path from u to n-1
+        n = online.size();
+        visited.assign(n, false);
+        graph.resize(n);
+        for (vi edge : edges) {
+            int u=edge[0], v=edge[1], cost=edge[2];
+            if (online[u] && online[v] && cost<=k) {
+                graph[u].push_back(Edge(u, v, cost));
             }
         }
-        cout<<findSafeWalk(grid, h)<<endl;
+        int ans = cost_and_score(0, k)[2];
+        if (!connected) return -1;
+        return ans;
+
+
+    }
+    void solve() {
+        int u, v, e, c;
+        ll k;
+        cin>>v>>e>>k;
+        vvi edges;
+        vb online;
+        while (v--) {
+            cin>>u;
+            online.push_back(u>0);
+        }
+        while (e--) {
+            cin>>u>>v>>c;
+            edges.push_back({u, v, c});
+        }
+        cout<<findMaxPathScore(edges, online, k)<<endl;
     }
 };
 
