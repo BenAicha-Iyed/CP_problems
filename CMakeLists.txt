@@ -25,6 +25,7 @@ add_executable(coding_betounsi
         CSES/CountingRooms.h
         CSES/Labyrinth.h
         CSES/RoundTrip.h
+        CSES/ShortestRoutes-I.h
 )
 
 target_include_directories(coding_betounsi PUBLIC contests)
