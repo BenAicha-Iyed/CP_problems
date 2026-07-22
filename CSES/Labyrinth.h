@@ -1,6 +1,12 @@
 //
-// Created by iyedbenaicha on 6/9/26.
+// Created by iyedbenaicha on 7/22/26.
+// problem link: https://cses.fi/problemset/result/18042165/
 //
+
+#ifndef CODING_BETOUNSI_LABYRINTH_H
+#define CODING_BETOUNSI_LABYRINTH_H
+
+#endif //CODING_BETOUNSI_LABYRINTH_H
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -95,20 +101,3 @@ public:
         }
     }
 };
-
-int main(void) {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // freopen("errors.txt", "w", stderr);
-
-    int t=1;
-    // cin>>t;
-    while (t--) {
-        Solution s;
-        s.solve();
-    }
-    return 0;
-}

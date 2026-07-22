@@ -22,7 +22,8 @@ add_executable(coding_betounsi
         "Leetcode daily challenges/2812 Find the safetest path in a grid.h"
         "Leetcode daily challenges/shortest path visiting all nodes.h"
         "Leetcode daily challenges/Find a safe walk through a grid.h"
-        contests/CSES/CountingRooms.h
+        CSES/CountingRooms.h
+        CSES/Labyrinth.h
 )
 
 target_include_directories(coding_betounsi PUBLIC contests)
